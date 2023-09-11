@@ -3,7 +3,7 @@ from app.schema.users import welcome
 
 router = APIRouter()
 
-@router.get("/api/welcome")
+@router.get("/welcome")
 def dashboard():
-    message = welcome()
+    message = welcome("peng")
     return {"ping": message}

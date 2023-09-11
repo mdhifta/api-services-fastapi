@@ -7,4 +7,4 @@ app = FastAPI()
 async def root() -> dict:
     return {"Ping":"Pong"}
 
-app.include_router(users.router, tags=["Dashboard"], prefix="")
+app.include_router(users.router, tags=["Dashboard"], prefix="/api")

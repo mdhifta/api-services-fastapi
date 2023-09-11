@@ -1,3 +1,3 @@
 
-def welcome() -> str:
-    return "pong"
+def welcome(text: str) -> str:
+    return text
