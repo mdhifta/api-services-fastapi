@@ -4,6 +4,6 @@ from sqlalchemy.ext.declarative import declarative_base
 
 DATABASE_URL = "postgresql://postgres:postgre@localhost:5432/python_db"
 
-engine = create_engine(DATABASE_URL)
+engine = create_engine(DATABASE_URL, pool_size=50, max_overflow=0)
 sessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 Base = declarative_base()
