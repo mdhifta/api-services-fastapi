@@ -1,10 +1,12 @@
 from fastapi import FastAPI
-from .api import users
+from .api import services
 
 app = FastAPI()
 
-@app.get("/", tags=['ROOT'])
+# base url access
+@app.get("/", tags=['Index'])
 async def root() -> dict:
-    return {"Ping":"Pong"}
+    return {"ping":"pong"}
 
-app.include_router(users.router, tags=["Dashboard"], prefix="/api")
+# if you want add new router class, just copy and edit tags name
+app.include_router(services.router, tags=["Services"], prefix="/api")
