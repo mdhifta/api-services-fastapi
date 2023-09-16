@@ -1,3 +1,4 @@
+![fastfest-removebg-preview](https://github.com/mdhifta/api-services-fastapi/assets/55729354/c0b9bf56-efb1-4f78-b4bc-6e10a37534ce)
 # FastFest Template API
 FastFest template is a clean structur for FastAPI. I made it with a simple concept and basic structure such as schema, models, api, core and utils.
 
