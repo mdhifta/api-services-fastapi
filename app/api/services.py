@@ -5,7 +5,7 @@ router = APIRouter()
 
 @router.get("/services")
 def services():
-    message = getMessage("Yeay, your fastfest template working")
+    message = getMessage("Services Working...")
 
     return {
         "code": 200,

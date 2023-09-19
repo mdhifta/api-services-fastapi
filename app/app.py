@@ -10,7 +10,14 @@ app = FastAPI()
 # base url access
 @app.get("/", tags=['Index'])
 async def root() -> dict:
-    return {"ping":"pong"}
+     return {
+        "code": 200,
+        "status": True,
+        "message": "Yeay, your fastfest template working",
+        "data": {
+            "access": True,
+        },
+    }
 
 # if you want add new router class, just copy and edit tags name
 app.include_router(services.router, tags=["Services"], prefix="/api")
