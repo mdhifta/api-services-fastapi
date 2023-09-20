@@ -40,11 +40,10 @@ def deleteUser(db: Session, user_id: int):
     db.delete(_user)
     db.commit()
 
-# update users lname, fname and phone number
+# update users fullname and phone number
 def updateUsers(db: Session, user_id:int, data:map):
     _user = getById(db=db, users_id=user_id)
-    _user.fname = data.fname
-    _user.lname = data.lname
+    _user.fullname = data.fullname
     _user.phone_number = data.phone_number
 
     db.commit()
