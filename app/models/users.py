@@ -6,7 +6,7 @@ class Users(Base):
 
     user_id = Column(Integer, primary_key=True)
     fullname = Column(String)
-    phone_number = Column(String)
-    email = Column(String)
+    phone_number = Column(String, unique=True)
+    email = Column(String, unique=True)
     password = Column(String)
     roles = Column(Integer)

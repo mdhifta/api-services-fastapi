@@ -18,6 +18,10 @@ def getById(db: Session, user_id: int):
 def signIn(db: Session, username: str):
     return db.query(Users).filter(Users.email == username).first()
 
+# validtaion email in query
+def emailValidation(db: Session, email: str):
+    return db.query(Users).filter(Users.email == email).first()
+
 # create users
 def createUser(db: Session, user: UserSignUp):
     _user = Users(

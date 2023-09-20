@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from app.schema.users import UserSignUp, UserSignIn
 from app.core.config import connection
 from sqlalchemy.orm import Session
-from app.crud.users import createUser, signIn
+from app.crud.users import createUser, signIn, emailValidation
 from passlib.context import CryptContext
 
 pwdHash = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -39,6 +39,15 @@ def signIn(user: UserSignIn, session: Session = Depends(connection)):
 
 @router.post("/sign-up")
 def signUp(user: UserSignUp, session: Session = Depends(connection)):
+    # validation phone
+    if emailValidation(session, user.email):
+         return {
+            "code": 404,
+            "status": False,
+            "message": "Upps.. your email registered.",
+            "data": None,
+        }
+         
     try:
         result = createUser(session, user)
         return {
