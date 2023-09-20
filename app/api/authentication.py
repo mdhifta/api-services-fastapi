@@ -9,7 +9,7 @@ pwdHash = CryptContext(schemes=["bcrypt"], deprecated="auto")
 router = APIRouter()
 
 @router.post("/sign-in")
-def services(user: UserSignIn, session: Session = Depends(connection)):  
+def signIn(user: UserSignIn, session: Session = Depends(connection)):  
     # verify user email
     result = signIn(session, user.email)
     if result == None:
@@ -38,7 +38,7 @@ def services(user: UserSignIn, session: Session = Depends(connection)):
         }
 
 @router.post("/sign-up")
-def services(user: UserSignUp, session: Session = Depends(connection)):
+def signUp(user: UserSignUp, session: Session = Depends(connection)):
     try:
         result = createUser(session, user)
         return {
