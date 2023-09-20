@@ -1,9 +1,14 @@
 from fastapi import FastAPI
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.openapi.utils import get_openapi
+from app.core.config import Base, engine
 
 # add flow route from api
-from .api import services
+from app.api import services
+from app.api import authentication
+
+# connection database
+Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
@@ -21,7 +26,7 @@ async def root() -> dict:
 
 # if you want add new router class, just copy and edit tags name
 app.include_router(services.router, tags=["Services"], prefix="/api")
-
+app.include_router(authentication.router, tags=["Users"], prefix="/api")
 
 # swagger modification, change if you want
 def swagger():
