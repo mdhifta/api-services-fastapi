@@ -1,6 +1,5 @@
-from typing import List, Optional, Generic, TypeVar
-from pydantic import BaseModel, Field
-from pydantic.generics import GenericModel
+from typing import Optional
+from pydantic import BaseModel
 
 class UserSignIn(BaseModel):
     email: Optional[str]=None
