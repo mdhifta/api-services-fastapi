@@ -15,23 +15,23 @@ FastFest template is a clean structur for FastAPI. I made it with a simple conce
 
 # Details FastFest
 
-** Api Folder **
+_Api Folder_
 - Api is used to include all the new logic and routes you want to add. for example, for example, I want to create a flow register, so just create authentication.py in the api and create the appropriate logic for the register.
 
-** Core Folder **
+_Core Folder_
 - Core is used to put the core of the system requirements, I put the database configuration here which can be changed and set directly in .env
 
-** Crud Folder **
+_Crud Folder_
 - Crud is used to provide interactions in the database, as the name suggests it is used to create, read, update and delete.
 
-** Models Folder **
+_Models Folder_
 - Models are used to set data formats according to the fields and tables in the database
 
-** Schema Folder **
+_Schema Folder_
 - Schema is used to provide validation of api data, whether for response or other needs.
 
-** Utils Folder **
+_Utils Folder_
 - Utils are used to provide simple logic that can be used to support multiple flows over and over again.
 
-** App.py **
+_App.py_
 - All interactions and adding route URLs or Swegger can be edited in app -> app.py
