@@ -4,34 +4,34 @@ FastFest template is a clean structur for FastAPI. I made it with a simple conce
 
 # How to Run?
 * First, you have to install the package in requirements.txt
-pip install -r requirements.txt
+- pip install -r requirements.txt
 
 * Second, you have to make sure you have created an .env file
-just rename the env-example file to .env
+- just rename the env-example file to .env
 
 * Then just run FastFest
-python3 main.py or python main.py
+- python3 main.py or python main.py
 
 
 # Details FastFest
 
 * Api Folder
-Api is used to include all the new logic and routes you want to add. for example, for example, I want to create a flow register, so just create authentication.py in the api and create the appropriate logic for the register.
+- Api is used to include all the new logic and routes you want to add. for example, for example, I want to create a flow register, so just create authentication.py in the api and create the appropriate logic for the register.
 
 * Core Folder
-Core is used to put the core of the system requirements, I put the database configuration here which can be changed and set directly in .env
+- Core is used to put the core of the system requirements, I put the database configuration here which can be changed and set directly in .env
 
 * Crud Folder
-Crud is used to provide interactions in the database, as the name suggests it is used to create, read, update and delete.
+- Crud is used to provide interactions in the database, as the name suggests it is used to create, read, update and delete.
 
 * Models Folder
-Models are used to set data formats according to the fields and tables in the database
+- Models are used to set data formats according to the fields and tables in the database
 
 * Schema Folder
-Schema is used to provide validation of api data, whether for response or other needs.
+- Schema is used to provide validation of api data, whether for response or other needs.
 
 * Utils Folder
-Utils are used to provide simple logic that can be used to support multiple flows over and over again.
+- Utils are used to provide simple logic that can be used to support multiple flows over and over again.
 
 * App.py 
-All interactions and adding route URLs or Swegger can be edited in app -> app.py
+- All interactions and adding route URLs or Swegger can be edited in app -> app.py
