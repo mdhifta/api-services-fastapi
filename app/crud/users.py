@@ -15,7 +15,7 @@ def getById(db: Session, user_id: int):
     return db.query(Users).filter(Users.user_id == user_id).first()
 
 # sign in query
-def signIn(db: Session, username: str):
+def modelSign(db: Session, username: str):
     return db.query(Users).filter(Users.email == username).first()
 
 # validtaion email in query

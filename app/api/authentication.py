@@ -2,7 +2,7 @@ from fastapi import APIRouter, Depends
 from app.schema.users import UserSignUp, UserSignIn
 from app.core.config import connection
 from sqlalchemy.orm import Session
-from app.crud.users import createUser, signIn, emailValidation
+from app.crud.users import createUser, modelSign, emailValidation
 from passlib.context import CryptContext
 
 pwdHash = CryptContext(schemes=["bcrypt"], deprecated="auto")
@@ -11,7 +11,7 @@ router = APIRouter()
 @router.post("/sign-in")
 def signIn(user: UserSignIn, session: Session = Depends(connection)):  
     # verify user email
-    result = signIn(session, user.email)
+    result = modelSign(session, user.email)
     if result == None:
         return {
             "code": 404,
@@ -56,7 +56,8 @@ def signUp(user: UserSignUp, session: Session = Depends(connection)):
             "message": "Success to create users.",
             "data": result,
         }
-    except:
+    except Exception as error:
+        print("An error occurred:", error)
         return {
             "code": 404,
             "status": False,
