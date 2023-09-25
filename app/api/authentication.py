@@ -56,8 +56,7 @@ def signUp(user: UserSignUp, session: Session = Depends(connection)):
             "message": "Success to create users.",
             "data": result,
         }
-    except Exception as error:
-        print("An error occurred:", error)
+    except:
         return {
             "code": 404,
             "status": False,
