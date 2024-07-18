@@ -14,10 +14,6 @@ def getUsers(db: Session, offsite:int=0, limit:int=0):
 def getById(db: Session, user_id: int):
     return db.query(Users).filter(Users.user_id == user_id).first()
 
-# sign in query
-def modelSign(db: Session, username: str):
-    return db.query(Users).filter(Users.email == username).first()
-
 # validtaion email in query
 def emailValidation(db: Session, email: str):
     return db.query(Users).filter(Users.email == email).first()
